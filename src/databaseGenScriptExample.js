@@ -25,8 +25,8 @@ collectionList.forEach(collection => {
     db.createCollection(collection);
 });
 
-db.candidates.insertOne({
-    _id: new ObjectId(),
+db.candidates.insert({
+    _id: ObjectId('67bb5178df6a7f70b73ce484'),
     name: 'Manolo',
     surname: 'Ruiz Sanz',
     email: 'manolo.ruizzz@correo.es',
@@ -197,5 +197,5 @@ db.timelinesections.insertOne({
             url: "https://example.com/2"
         }
     ],
-    order: 1,
+    order: 1
 });
