@@ -37,7 +37,7 @@
 <body hx-ext="response-targets" hx-headers='{"X-Requested-With": "XMLHttpRequest"}' hx-target-error="#toastr-container">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-daupm">
-        <div class="container-fluid">
+        <div class="container-fluid mx-3">
             <a class="navbar-brand" href="/">
                 <img id="logo" src="./img/logo_WH.png" alt="Logo DAUPM">
             </a>
@@ -49,22 +49,24 @@
                     <span class="visually-hidden">Cargando...</span>
                 </div>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <% if (user==null) { %>
-                            <a class="nav-link" href="/login">Iniciar sesión</a>
-                            <% } else { %>
-                                <a class="nav-link">
-                                    <%= user.name %>
-                                </a>
-                            <% } %>
-                    </li>
-                </ul>
+            <div class="d-flex justify-content-between align-items-center"> 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse mx-5 " id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <% if (user==null) { %>
+                                <a class="nav-link" href="/login">Iniciar sesión</a>
+                                <% } else { %>
+                                    <a class="nav-link">
+                                        <%= user.name %>
+                                    </a>
+                                <% } %>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -77,37 +79,61 @@
 
     <div id="toastr-container"><%- toasts %></div>
 
-    <footer class="bg-daupm text-white p-4 mt-auto">
+    <footer class="bg-daupm text-white py-2 px-5 mt-auto">
         <div class="container">
-            <div class="row">
+            <div>
+                <h5 class="text-uppercase fw-bold mt-3" ><%= texts.delegationName %></h5>
+                <h6>Universidad Politécnica de Madrid</h6>
+            </div>
+            <hr class="my-3">
+            <div class="row d-none d-md-flex">
                 <!-- Primera columna -->
                 <div class="col-md-6 mb-3">
-                    <h5 class="text-uppercase fw-bold">Contacto</h5>
-                    <ul class="list-unstyled">
-                        <li><%= texts.delegationName %></li>
-                        <li>Universidad Politécnica de Madrid</li>
+                    <h6 class="text-uppercase fw-bold">Contacto</h6>
+                    <ul class="list-unstyled ">
                         <li><strong>Teléfono:</strong> <%= texts.phoneNumber %></li>
                         <li><strong>Email:</strong> <a href="mailto:<%= texts.email %>" class="text-white"><%= texts.email %></a></li>
                         <li><strong>Web:</strong> <a href="http://<%= texts.web %>" class="text-white"><%= texts.web %></a></li>
                     </ul>
                 </div>
-<!-- Segunda columna -->
+                <!-- Segunda columna -->
                 <div class="col-md-6 mb-3">
-                    <h5 class="text-uppercase fw-bold">¡Conoce nuestras RRSS!</h5>
+                    <h6 class="text-uppercase fw-bold ">¡Conoce nuestras RRSS!</h6>
                     <ul class="list-unstyled">
                         <% for(let key in texts.socialMedia) { %>
                             <li class="me-3">
                                 <a href="<%= texts.socialMedia[key].link %>"
                                     class="text-white  link-underline link-underline-opacity-0">
                                     <i class="<%= texts.socialMedia[key].icon %>"></i>
-                                    <p class="d-inline "> <%= texts.socialMedia[key].name %></p>
+                                    <p class="d-md-inline d-none"> <%= texts.socialMedia[key].name %></p>
                                 </a>
                             </li>
                         <% } %>
                     </ul>
                 </div>
             </div>
-            <p class="text-light text-center">Si detectas algún error o dato incorrecto, puedes reportarlo en la dirección: <a href="mailto:<%= texts.emailElections %>" class="text-white"><%= texts.emailElections %></a></p>
+            <div class="row d-md-none">
+                <div class="col-6 mb-3">
+                    <h6 class="text-uppercase fw-bold">Contacto</h6>
+                    <div class=" fs-4 align-items-center">
+                        <a href="tel:<%= texts.phoneNumber %>" class="text-white "><i class="bi-phone-vibrate-fill"></i></a>
+                        <a href="mailto:<%= texts.email %>" class="text-white"><i class="bi-envelope-at-fill"></i></a>
+                        <a href="http://<%= texts.web %>" class="text-white"><i class="bi-globe"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 mb-3">
+                    <h6 class="text-uppercase fw-bold ">¡Nuestras RRSS!</h6>
+                    <div class="d-block d-md-none fs-4 align-items-center">
+                        <% for(let key in texts.socialMedia) { %>
+                            <a href="<%= texts.socialMedia[key].link %>"
+                                class="text-white  link-underline link-underline-opacity-0">
+                                <i class="<%= texts.socialMedia[key].icon %>"></i>
+                            </a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+
             <p class="text-light fst-italic text-center">
                 <a href="https://github.com/da-upm/participa" class="text-white" style="text-decoration: none;">
                     <i class="bi bi-github"></i>
