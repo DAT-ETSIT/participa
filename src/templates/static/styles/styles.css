@@ -179,3 +179,7 @@ span.badge {
     opacity: 0.2;
     margin: 1.5rem 0;
 }
+
+#navbarButtonUsername #navbarNav {
+    margin-left: 1.5rem !important;
+}
