@@ -1,7 +1,19 @@
-body {
-    font-family: 'Mukta Malar', sans-serif;
+@font-face {
+    font-family: 'Alte Haas Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Alte Haas Grotesk'), url('https://fonts.cdnfonts.com/s/8581/AlteHaasGroteskRegular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Alte Haas Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Alte Haas Grotesk Bold'), url('https://fonts.cdnfonts.com/s/8581/AlteHaasGroteskBold.woff') format('woff');
 }
 
+body {
+    font-family: 'Alte Haas Grotesk', sans-serif;
+}
 
 h1,
 h2,
