@@ -198,8 +198,8 @@ span.badge {
 .bi-bluesky {
     content: "";
     background-color: currentColor;
-    -webkit-mask: url("img/bluesky.svg") no-repeat 50% 50%;
-    mask: url("img/bluesky.svg") no-repeat 50% 50%;
+    -webkit-mask: url("../img/bluesky.svg") no-repeat 50% 50%;
+    mask: url("../img/bluesky.svg") no-repeat 50% 50%;
     -webkit-mask-size: cover;
     mask-size: cover;
     height: 16px;
