@@ -178,3 +178,14 @@ span.badge {
     opacity: 0.2;
     margin: 1.5rem 0;
 }
+
+.bi-bluesky::before {
+    content: "";
+    background-color: currentColor;
+    -webkit-mask: url("img/icons/bluesky.svg") no-repeat 50% 50%;
+    mask: url("img/icons/bluesky.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    height: 16px;
+    width: 16px;
+}
