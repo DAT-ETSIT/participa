@@ -195,11 +195,7 @@ span.badge {
     margin: 1.5rem 0;
 }
 
-#navbarButtonUsername #navbarNav {
-    margin-left: 1.5rem !important;
-}
-
-.bi-bluesky::before {
+.bi-bluesky {
     content: "";
     background-color: currentColor;
     -webkit-mask: url("img/bluesky.svg") no-repeat 50% 50%;
