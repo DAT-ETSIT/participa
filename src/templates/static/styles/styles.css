@@ -195,7 +195,7 @@ span.badge {
     margin: 1.5rem 0;
 }
 
-.bi-bluesky {
+.bi-bluesky::before {
     content: "";
     background-color: currentColor;
     -webkit-mask: url("../img/bluesky.svg") no-repeat 50% 50%;
@@ -203,5 +203,5 @@ span.badge {
     -webkit-mask-size: cover;
     mask-size: cover;
     height: 16px;
-    width: 16px;
+    width: 19px;
 }
