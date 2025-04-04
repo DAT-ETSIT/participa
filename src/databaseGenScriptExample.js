@@ -26,7 +26,7 @@ collectionList.forEach(collection => {
 });
 
 db.candidates.insert({
-    _id: ObjectId(),
+    _id: ObjectId('67bb5178df6a7f70b73ce484'),
     name: 'Manolo',
     surname: 'Ruiz Sanz',
     email: 'manolo.ruizzz@correo.es',
@@ -64,8 +64,8 @@ db.candidates.insert({
     programUrl: "https://example.com/manolo/programazz"
 });
 
-db.parameters.insert({
-    _id: ObjectId(),
+db.parameters.insertOne({
+    _id: new ObjectId(),
     categories: {
         general: 'General',
         economic: 'Financiación',
@@ -182,8 +182,8 @@ db.parameters.insert({
     },
 });
 
-db.timelinesections.insert({
-    _id: ObjectId(),
+db.timelinesections.insertOne({
+    _id: new ObjectId(),
     dateRange: "1 - 10 JAN 2025",
     title: "Example Title",
     content: "<p>Example content goes here. You can include HTML as needed.</p>",
